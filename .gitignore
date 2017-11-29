@@ -2,6 +2,13 @@
 /build3/gmake
 /build_cmake/
 
+# Visual Studio
+/build3/vs2010/
+/build3/vs2012/obj
+/build3/vs2012/*.sdf
+/build3/vs2012/*.suo
+/build3/vs2012/*.user
+
 *.pyc
 
 # Python
