@@ -517,7 +517,7 @@ unsigned long int			CProfileManager::ResetTime = 0;
 CProfileIterator *	CProfileManager::Get_Iterator( void )
 { 
 
-		int threadIndex = btQuickprofGetCurrentThreadIndex2();
+		unsigned int threadIndex = btQuickprofGetCurrentThreadIndex2();
 		if ((threadIndex<0) || threadIndex >= BT_QUICKPROF_MAX_THREAD_COUNT)
 			return 0;
 
@@ -526,7 +526,7 @@ CProfileIterator *	CProfileManager::Get_Iterator( void )
 
 void						CProfileManager::CleanupMemory(void)
 {
-	for (int i=0;i<BT_QUICKPROF_MAX_THREAD_COUNT;i++)
+	for (unsigned int i=0;i<BT_QUICKPROF_MAX_THREAD_COUNT;i++)
 	{
 		gRoots[i].CleanupMemory();
 	}
@@ -548,7 +548,7 @@ void						CProfileManager::CleanupMemory(void)
  *=============================================================================================*/
 void	CProfileManager::Start_Profile( const char * name )
 {
-	int threadIndex = btQuickprofGetCurrentThreadIndex2();
+	unsigned int threadIndex = btQuickprofGetCurrentThreadIndex2();
 	if ((threadIndex<0) || threadIndex >= BT_QUICKPROF_MAX_THREAD_COUNT)
 		return;
 
@@ -565,7 +565,7 @@ void	CProfileManager::Start_Profile( const char * name )
  *=============================================================================================*/
 void	CProfileManager::Stop_Profile( void )
 {
-	int threadIndex = btQuickprofGetCurrentThreadIndex2();
+	unsigned int threadIndex = btQuickprofGetCurrentThreadIndex2();
 	if ((threadIndex<0) || threadIndex >= BT_QUICKPROF_MAX_THREAD_COUNT)
 		return;
 
@@ -589,7 +589,7 @@ void	CProfileManager::Stop_Profile( void )
 void	CProfileManager::Reset( void )
 {
 	gProfileClock.reset();
-	int threadIndex = btQuickprofGetCurrentThreadIndex2();
+	unsigned int threadIndex = btQuickprofGetCurrentThreadIndex2();
 	if ((threadIndex<0) || threadIndex >= BT_QUICKPROF_MAX_THREAD_COUNT)
 		return;
 	gRoots[threadIndex].Reset();

@@ -339,7 +339,9 @@ void btBulletXmlWorldImporter::deSerializeCompoundShapeData(TiXmlNode* pParent)
 	
 	SET_INT_VALUE(pParent, compoundData,m_numChildShapes);
 
+#if defined(BT_DEBUG)
 	TiXmlNode* xmlShapeData = pParent->FirstChild("m_collisionShapeData");
+#endif
 	btAssert(xmlShapeData );
 
 	{

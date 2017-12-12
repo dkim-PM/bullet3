@@ -112,10 +112,7 @@ void btMultiBodyGearConstraint::createConstraintRows(btMultiBodyConstraintArray&
 	btScalar posError = 0;
 	const btVector3 dummy(0, 0, 0);
 	
-	btScalar kp = 1;
-	btScalar kd = 1;
 	int numRows = getNumRows();
-
 	for (int row=0;row<numRows;row++)
 	{
 		btMultiBodySolverConstraint& constraintRow = constraintRows.expandNonInitializing();

@@ -208,20 +208,16 @@ bool computeSplitPlane(unsigned int vcount,
   float dz = bmax[2] - bmin[2];
 
 
-	float laxis = dx;
-
 	unsigned int axis = 0;
 
 	if ( dy > dx )
 	{
 		axis = 1;
-		laxis = dy;
 	}
 
 	if ( dz > dx && dz > dy )
 	{
 		axis = 2;
-		laxis = dz;
 	}
 
   float p1[3];
